@@ -184,7 +184,7 @@ const Header = () => {
             {/* Offcanvas area start */}
             {/* Add cart modal area start */}
             <div
-                className="product-modal-sm modal fade"
+                className="product-modal-sm modal fade show"
                 id="producQuickViewModal"
                 tabIndex={-1}
             >

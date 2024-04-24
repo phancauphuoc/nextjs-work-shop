@@ -1,4 +1,10 @@
 import React from 'react'
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 const BannerHeader = () => {
     return (
@@ -6,178 +12,196 @@ const BannerHeader = () => {
             {/* Banner area start */}
             <section
                 className="banner-4 p-relative furniture-banner-area fix bg-image pb-100"
-                // data-background="../../../public/assets/imgs/furniture/banner/bg.png"
                 data-bg-color="#F5F1E6"
                 style={{ backgroundImage: 'url(/assets/imgs/furniture/banner/bg.png)' }}
             >
                 <div className="swiper banner-active">
                     <div className="swiper-wrapper">
-                        <div className="swiper-slide">
-                            <div className="banner-item-4 d-flex align-items-end">
-                                <div className="container">
-                                    <div className="row g-5 align-self-end">
-                                        <div className="col-xxl-6 col-lg-6">
-                                            <div className="banner-content-4 furniture__content">
-                                                <span>New Arrival...</span>
-                                                <h2 className="banner-title-4">
-                                                    Elevate <br /> Your Home Aesthetics
-                                                </h2>
-                                                <p>
-                                                    A furniture e-commerce company operates in the digital
-                                                    space, offering a wide range of furniture products for
-                                                    sale through an online platform.
-                                                </p>
-                                                <div className="banner-btn-wrapper furniture__btn-group">
-                                                    <a className="solid-btn" href="product-details.html">
-                                                        Buy Now
-                                                        <span>
-                                                            <i className="fa-regular fa-angle-right" />
-                                                        </span>
-                                                    </a>
-                                                    <a
-                                                        className="border__btn-banner"
-                                                        href="product-details.html"
-                                                    >
-                                                        view details
-                                                        <span>
-                                                            <i className="fa-regular fa-angle-right" />
-                                                        </span>
-                                                    </a>
+                        <Swiper
+                            // install Swiper modules
+                            modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+                            spaceBetween={50}
+                            slidesPerView={1}
+                            navigation
+                            pagination={{ clickable: true }}
+                            // scrollbar={{ draggable: true }}
+                            // onSwiper={(swiper) => console.log(swiper)}
+                            // onSlideChange={() => console.log('slide change')}
+                            autoplay={{
+                                delay: 3500,
+                                disableOnInteraction: false
+                            }}
+                        >
+                            <SwiperSlide>
+                                <div className="swiper-slide">
+                                    <div className="banner-item-4 d-flex align-items-end">
+                                        <div className="container">
+                                            <div className="row g-5 align-self-end">
+                                                <div className="col-xxl-6 col-lg-6">
+                                                    <div className="banner-content-4 furniture__content">
+                                                        <span>New Arrival...</span>
+                                                        <h2 className="banner-title-4">
+                                                            Elevate <br /> Your Home Aesthetics
+                                                        </h2>
+                                                        <p>
+                                                            A furniture e-commerce company operates in the digital
+                                                            space, offering a wide range of furniture products for
+                                                            sale through an online platform.
+                                                        </p>
+                                                        <div className="banner-btn-wrapper furniture__btn-group">
+                                                            <a className="solid-btn" href="product-details.html">
+                                                                Buy Now
+                                                                <span>
+                                                                    <i className="fa-regular fa-angle-right" />
+                                                                </span>
+                                                            </a>
+                                                            <a
+                                                                className="border__btn-banner"
+                                                                href="product-details.html"
+                                                            >
+                                                                view details
+                                                                <span>
+                                                                    <i className="fa-regular fa-angle-right" />
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-xxl-6 col-lg-6">
-                                            <div className="banner-thumb-wrapper-4 p-relative">
-                                                <div className="banner-thumb-4 p-relative z-index-1">
-                                                    <img
-                                                        src="assets/imgs/furniture/banner/chair1.png"
-                                                        alt="image"
-                                                    />
-                                                </div>
-                                                <div className="furniture-circle d-none d-lg-block">
-                                                    <img
-                                                        src="assets/imgs/furniture/banner/circle.png"
-                                                        alt=""
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="swiper-slide">
-                            <div className="banner-item-4 d-flex align-items-end">
-                                <div className="container">
-                                    <div className="row g-5 align-self-end">
-                                        <div className="col-xxl-6 col-lg-6">
-                                            <div className="banner-content-4 furniture__content">
-                                                <span>New Arrival...</span>
-                                                <h2 className="banner-title-4">
-                                                    Elevate <br /> Your Home Aesthetics
-                                                </h2>
-                                                <p>
-                                                    A furniture e-commerce company operates in the digital
-                                                    space, offering a wide range of furniture products for
-                                                    sale through an online platform.
-                                                </p>
-                                                <div className="banner-btn-wrapper furniture__btn-group">
-                                                    <a className="solid-btn" href="product-details.html">
-                                                        Buy Now
-                                                        <span>
-                                                            <i className="fa-regular fa-angle-right" />
-                                                        </span>
-                                                    </a>
-                                                    <a
-                                                        className="border__btn-banner"
-                                                        href="product-details.html"
-                                                    >
-                                                        view details
-                                                        <span>
-                                                            <i className="fa-regular fa-angle-right" />
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-xxl-6 col-lg-6">
-                                            <div className="banner-thumb-wrapper-4 p-relative">
-                                                <div className="banner-thumb-4 p-relative z-index-1">
-                                                    <img
-                                                        src="assets/imgs/furniture/banner/chair2.png"
-                                                        alt="image"
-                                                    />
-                                                </div>
-                                                <div className="furniture-circle d-none d-lg-block">
-                                                    <img
-                                                        src="assets/imgs/furniture/banner/circle.png"
-                                                        alt=""
-                                                    />
+                                                <div className="col-xxl-6 col-lg-6">
+                                                    <div className="banner-thumb-wrapper-4 p-relative">
+                                                        <div className="banner-thumb-4 p-relative z-index-1">
+                                                            <img
+                                                                src="assets/imgs/furniture/banner/chair1.png"
+                                                                alt="image"
+                                                            />
+                                                        </div>
+                                                        <div className="furniture-circle d-none d-lg-block">
+                                                            <img
+                                                                src="assets/imgs/furniture/banner/circle.png"
+                                                                alt=""
+                                                            />
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="swiper-slide">
-                            <div className="banner-item-4 d-flex align-items-end">
-                                <div className="container">
-                                    <div className="row g-5 align-self-end">
-                                        <div className="col-xxl-6 col-lg-6">
-                                            <div className="banner-content-4 furniture__content">
-                                                <span>New Arrival...</span>
-                                                <h2 className="banner-title-4">
-                                                    Elevate <br /> Your Home Aesthetics
-                                                </h2>
-                                                <p>
-                                                    A furniture e-commerce company operates in the digital
-                                                    space, offering a wide range of furniture products for
-                                                    sale through an online platform.
-                                                </p>
-                                                <div className="banner-btn-wrapper furniture__btn-group">
-                                                    <a className="solid-btn" href="product-details.html">
-                                                        Buy Now
-                                                        <span>
-                                                            <i className="fa-regular fa-angle-right" />
-                                                        </span>
-                                                    </a>
-                                                    <a
-                                                        className="border__btn-banner"
-                                                        href="product-details.html"
-                                                    >
-                                                        view details
-                                                        <span>
-                                                            <i className="fa-regular fa-angle-right" />
-                                                        </span>
-                                                    </a>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className="swiper-slide">
+                                    <div className="banner-item-4 d-flex align-items-end">
+                                        <div className="container">
+                                            <div className="row g-5 align-self-end">
+                                                <div className="col-xxl-6 col-lg-6">
+                                                    <div className="banner-content-4 furniture__content">
+                                                        <span>New Arrival...</span>
+                                                        <h2 className="banner-title-4">
+                                                            Elevate <br /> Your Home Aesthetics
+                                                        </h2>
+                                                        <p>
+                                                            A furniture e-commerce company operates in the digital
+                                                            space, offering a wide range of furniture products for
+                                                            sale through an online platform.
+                                                        </p>
+                                                        <div className="banner-btn-wrapper furniture__btn-group">
+                                                            <a className="solid-btn" href="product-details.html">
+                                                                Buy Now
+                                                                <span>
+                                                                    <i className="fa-regular fa-angle-right" />
+                                                                </span>
+                                                            </a>
+                                                            <a
+                                                                className="border__btn-banner"
+                                                                href="product-details.html"
+                                                            >
+                                                                view details
+                                                                <span>
+                                                                    <i className="fa-regular fa-angle-right" />
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-xxl-6 col-lg-6">
-                                            <div className="banner-thumb-wrapper-4 p-relative">
-                                                <div className="banner-thumb-4 p-relative z-index-1">
-                                                    <img
-                                                        src="assets/imgs/furniture/banner/chair3.png"
-                                                        alt="image"
-                                                    />
-                                                </div>
-                                                <div className="furniture-circle d-none d-lg-block">
-                                                    <img
-                                                        src="assets/imgs/furniture/banner/circle.png"
-                                                        alt=""
-                                                    />
+                                                <div className="col-xxl-6 col-lg-6">
+                                                    <div className="banner-thumb-wrapper-4 p-relative">
+                                                        <div className="banner-thumb-4 p-relative z-index-1">
+                                                            <img
+                                                                src="assets/imgs/furniture/banner/chair2.png"
+                                                                alt="image"
+                                                            />
+                                                        </div>
+                                                        <div className="furniture-circle d-none d-lg-block">
+                                                            <img
+                                                                src="assets/imgs/furniture/banner/circle.png"
+                                                                alt=""
+                                                            />
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    {/* If we need pagination */}
-                    <div className="banner-dot-inner">
-                        <div className="banner-dot" />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className="swiper-slide">
+                                    <div className="banner-item-4 d-flex align-items-end">
+                                        <div className="container">
+                                            <div className="row g-5 align-self-end">
+                                                <div className="col-xxl-6 col-lg-6">
+                                                    <div className="banner-content-4 furniture__content">
+                                                        <span>New Arrival...</span>
+                                                        <h2 className="banner-title-4">
+                                                            Elevate <br /> Your Home Aesthetics
+                                                        </h2>
+                                                        <p>
+                                                            A furniture e-commerce company operates in the digital
+                                                            space, offering a wide range of furniture products for
+                                                            sale through an online platform.
+                                                        </p>
+                                                        <div className="banner-btn-wrapper furniture__btn-group">
+                                                            <a className="solid-btn" href="product-details.html">
+                                                                Buy Now
+                                                                <span>
+                                                                    <i className="fa-regular fa-angle-right" />
+                                                                </span>
+                                                            </a>
+                                                            <a
+                                                                className="border__btn-banner"
+                                                                href="product-details.html"
+                                                            >
+                                                                view details
+                                                                <span>
+                                                                    <i className="fa-regular fa-angle-right" />
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="col-xxl-6 col-lg-6">
+                                                    <div className="banner-thumb-wrapper-4 p-relative">
+                                                        <div className="banner-thumb-4 p-relative z-index-1">
+                                                            <img
+                                                                src="assets/imgs/furniture/banner/chair3.png"
+                                                                alt="image"
+                                                            />
+                                                        </div>
+                                                        <div className="furniture-circle d-none d-lg-block">
+                                                            <img
+                                                                src="assets/imgs/furniture/banner/circle.png"
+                                                                alt=""
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+                            ...
+                        </Swiper>
                     </div>
                 </div>
             </section>
