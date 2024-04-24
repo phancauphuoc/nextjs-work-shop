@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import ApiClient from '@/utils/fetcher/axiosConfig'
+import { urlAPI } from '@/constant/url';
+import get from 'lodash/get'
 
 const Topsale = () => {
+
+    const getFeaturedProduct = async () => {
+        const res: any = await ApiClient.get(`http://localhost:8000/${urlAPI.FAKE_DATA.FEATURED_PRODUCT}`);
+        console.log('res', get(res, 'data', {}));
+
+    }
+
+    useEffect(() => {
+        getFeaturedProduct();
+    }, [])
     return (
         <>
             {/* Off area start */}
