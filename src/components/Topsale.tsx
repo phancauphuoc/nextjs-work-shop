@@ -8,17 +8,21 @@ import 'swiper/css/scrollbar';
 import ApiClient from '@/utils/fetcher/axiosConfig'
 import { urlAPI } from '@/constant/url';
 import get from 'lodash/get'
+import { useAppDispatch } from '@/hooks/useStore'
+import { getListFeaturedProduct } from '@/services/redux/slices/feature-product/action';
 
 const Topsale = () => {
+    // const dispatch = useAppDispatch();
 
-    const getFeaturedProduct = async () => {
-        const res: any = await ApiClient.get(`http://localhost:8000/${urlAPI.FAKE_DATA.FEATURED_PRODUCT}`);
-        console.log('res', get(res, 'data', {}));
 
-    }
+    // const getFeaturedProduct = async () => {
+    //     const res: any = await ApiClient.get(`http://localhost:8000/${urlAPI.FAKE_DATA.FEATURED_PRODUCT}`);
+    //     console.log('res', get(res, 'data', {}));
+    // }
 
     useEffect(() => {
-        getFeaturedProduct();
+        // getFeaturedProduct();
+        // dispatch(getListFeaturedProduct());
     }, [])
     return (
         <>

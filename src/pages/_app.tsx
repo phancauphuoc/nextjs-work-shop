@@ -1,12 +1,15 @@
 // import "@/styles/globals.css";
+import { makeStore, wrapper } from "@/services/redux/store";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import Script from "next/script";
+import { Provider } from "react-redux";
 // import '../../public/'
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   const APP_NAME = 'MINE SHOP'
   const APP_DESCRIPTION = 'MINE SHOP'
+  console.log(makeStore)
   return (
     <>
       {/* <Head>
@@ -36,8 +39,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="stylesheet" href="/assets/css/spacing.css" />
         <link rel="stylesheet" href="/assets/css/main.css" />
       </Head> */}
-
+      {/* <Provider store={makeStore}> */}
       <Component {...pageProps} />
+      {/* </Provider> */}
       {/* js here */}
       {/* <Script rel="stylesheet" src="../../public/assets/js/jquery-3.6.0.min.js"></Script> */}
       {/* <Script rel="stylesheet" src="/assets/js/waypoints.min.js"></Script>
@@ -54,3 +58,4 @@ export default function App({ Component, pageProps }: AppProps) {
     </>
   );
 }
+export default wrapper.withRedux(App)
