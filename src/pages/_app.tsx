@@ -39,9 +39,26 @@ function App({ Component, pageProps }: AppProps) {
         <link rel="stylesheet" href="/assets/css/spacing.css" />
         <link rel="stylesheet" href="/assets/css/main.css" />
       </Head> */}
-      {/* <Provider store={makeStore}> */}
+      <Head>
+        <title>{APP_NAME}</title>
+        <meta name="viewport" content="viewport-fit=cover" />
+        <meta name="theme-color" content="#ff6334" />
+        <meta property="og:title" content={APP_NAME} />
+        <meta property="og:site_name" content={APP_NAME} />
+        <meta property="og:image" content="/icons/logo_512.png" />
+        <meta property="og:url" content="https://www.lottecnf.com" />
+        <meta property="og:description" content={APP_DESCRIPTION} />
+        <meta name="application-name" content={APP_NAME} />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content={APP_NAME} />
+        <meta name="description" content={APP_DESCRIPTION} />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="theme-color" content="#FFFFFF" />
+        <script src="/assets/js/bootstrap.bundle.min.js" />
+      </Head>
       <Component {...pageProps} />
-      {/* </Provider> */}
       {/* js here */}
       {/* <Script rel="stylesheet" src="../../public/assets/js/jquery-3.6.0.min.js"></Script> */}
       {/* <Script rel="stylesheet" src="/assets/js/waypoints.min.js"></Script>

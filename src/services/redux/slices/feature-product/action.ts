@@ -8,7 +8,7 @@ export const getListFeaturedProduct: any = createAsyncThunk(
     "feature/list",
     async (params, thunkApi) => {
         try {
-            const res = await ApiClient.get(`http://localhost:8000/${urlAPI.FAKE_DATA.FEATURED_PRODUCT}`, { params });
+            const res = await ApiClient.get(`http://localhost:8000/${urlAPI.FAKE_DATA.FEATURED_PRODUCT}`);
             return get(res, 'data', null);
         } catch (error) {
             thunkApi.dispatch(setError(error))

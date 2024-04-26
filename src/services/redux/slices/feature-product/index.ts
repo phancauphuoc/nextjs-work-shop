@@ -8,7 +8,7 @@ const initialState = {
 }
 
 const FeatureSlice = createSlice({
-    name: "payment",
+    name: "feature-product",
     initialState,
     reducers: {},
     extraReducers(builer) {
@@ -18,10 +18,10 @@ const FeatureSlice = createSlice({
                 state.loading = false
             })
             .addCase(getListFeaturedProduct.fulfilled, (state, action) => {
-                state.featureProduct = get(action, 'data', null)
+                state.featureProduct = get(action, 'payload', null)
                 state.loading = false
             })
-            .addCase(getListFeaturedProduct.reject, (state, action) => {
+            .addCase(getListFeaturedProduct.rejected, (state, action) => {
                 state.featureProduct = null;
                 state.loading = true;
             })
